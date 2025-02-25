@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ character.name }}</h1>
+<p>Element: {{ character.element }}</p>
+<p>Weapon: {{ character.weapon }}</p>
+<p>Region: {{ character.region.name }}</p>
+<a href="{{ url_for('update', id=character.id) }}">Edit</a>
+<a href="{{ url_for('remove', id=character.id) }}">Delete</a>
+{% endblock %}

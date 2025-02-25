@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Edit Character</h1>
+<form method="post">
+    <input type="text" name="name" value="{{ character.name }}" required>
+    <input type="text" name="element" value="{{ character.element }}" required>
+    <input type="text" name="weapon" value="{{ character.weapon }}" required>
+    <select name="region">
+        {% for region in regions %}
+        <option value="{{ region.id }}" {% if region.id == character.region_id %}selected{% endif %}>{{ region.name }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Update</button>
+</form>
+{% endblock %}

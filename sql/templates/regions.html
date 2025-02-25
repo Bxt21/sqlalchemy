@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Regions</h1>
+<ul>
+    {% for region in regions %}
+    <li>{{ region.name }}</li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('create_region') }}">Add New Region</a>
+{% endblock %}
